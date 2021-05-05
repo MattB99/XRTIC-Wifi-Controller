@@ -1,0 +1,843 @@
+
+
+.websocket-messages {
+
+}
+
+body {
+ background-image: url("img/wariokart_scene.png");
+ background-repeat: no-repeat;
+ background-size:cover;
+ background-attachment: fixed;
+ background-position: center right;
+ background-color: black;
+ /*background-color: #202020;*/
+}
+
+.monitor-panel-wrapper {
+  height: 70vh;
+  width: 100vw;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: transparent;
+
+
+}
+
+.monitor-panel {
+  height: 90%;
+  width: 90%;
+
+  position: absolute;
+  left: 5%;
+  top: 5%;
+
+
+
+}
+
+.input-panel {
+  width: 33%;
+  height: 76%;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+
+
+
+}
+
+
+.output-panel {
+
+  width: 63%;
+  height: 76%;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+
+
+}
+
+.raw-panel {
+  width: 98%;
+  height:20%;
+  position: absolute;
+  bottom: 1%;
+  left: 1%;
+
+  overflow: auto;
+  border-radius: 0.5vw;
+  background-color: rgba(255, 255, 255, 0.9);
+
+
+}
+
+.controller-input-section {
+  width: 48%;
+  height: 18%;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+
+  border-radius: 0.5vw;
+  background-color: rgba(255, 255, 255, 0.9);
+
+}
+
+.bump-sensor-input-section {
+  width: 48%;
+  height: 56%;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  border-radius: 0.5vw;
+
+  background-color: rgba(255, 255, 255, 0.9);
+
+}
+
+.rfid-input-section {
+  width: 48%;
+  height: 36%;
+  position: absolute;
+  top: 21%;
+  left: 1%;
+  border-radius: 0.5vw;
+  background-color: rgba(255, 255, 255, 0.9);
+
+}
+
+.ir-sensor-input-section {
+  width: 98%;
+  height: 40%;
+  position: absolute;
+  bottom: 1%;
+  left: 1%;
+
+  border-radius: 0.5vw;
+  background-color: rgba(255, 255, 255, 0.9);
+
+
+}
+
+.title-output-section {
+  width: 98%;
+  height: 15%;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0.5vw;
+}
+
+.speed-output-section {
+  width: 24%;
+  height: 28%;
+  position: absolute;
+  left: 1%;
+  top: 18%;
+  border-radius: 0.5vw;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.wheel-output-section {
+  width: 24%;
+  height: 51%;
+  position: absolute;
+  left: 1%;
+  bottom: 1%;
+
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0.5vw;
+}
+
+.display-output-section{
+  width: 24%;
+  height: 28%;
+  position: absolute;
+  right: 1%;
+  top: 18%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0.5vw;
+}
+
+.power-output-section {
+  width: 24%;
+  height: 51%;
+  position: absolute;
+  right: 1%;
+  bottom: 1%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0.5vw;
+
+}
+
+.action-output-section {
+  width: 46%;
+  height: 81%;
+  position: absolute;
+  left: 27%;
+  bottom: 1%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0.5vw;
+  overflow: auto;
+
+
+}
+
+
+.display-output-section-element {
+  width: 50%;
+  height: 100%;
+
+  position: absolute;
+  left: 25%;
+  top: 0%;
+
+
+
+
+
+
+}
+
+.display-segment {
+
+}
+
+#display-segment-a {
+  width: 30%;
+  height: 10%;
+
+  position: absolute;
+  left: 35%;
+  top: 5%;
+
+  background-color: darkgreen;
+  border-radius: 35% 35% 35% 35%;
+
+
+}
+
+#display-segment-b {
+  width: 10%;
+  height: 30%;
+
+  position: absolute;
+  left: 65%;
+  top: 15%;
+
+  background-color: darkgreen;
+  border-radius: 35% 35% 35% 35%;
+}
+
+#display-segment-c {
+  width: 10%;
+  height: 30%;
+
+  position: absolute;
+  left: 65%;
+  bottom: 15%;
+
+  background-color: darkgreen;
+  border-radius: 35% 35% 35% 35%;
+}
+
+#display-segment-d {
+  width: 30%;
+  height: 10%;
+
+  position: absolute;
+  left: 35%;
+  bottom: 5%;
+
+  background-color: darkgreen;
+  border-radius: 35% 35% 35% 35%;
+}
+
+#display-segment-e {
+  width: 10%;
+  height: 30%;
+
+  position: absolute;
+  left: 25%;
+  bottom: 15%;
+
+
+  background-color: darkgreen;
+  border-radius: 35% 35% 35% 35%;
+}
+
+#display-segment-f {
+  width: 10%;
+  height: 30%;
+
+  position: absolute;
+  left: 25%;
+  top: 15%;
+
+  background-color: darkgreen;
+  border-radius: 35% 35% 35% 35%;
+}
+
+#display-segment-g {
+  width: 30%;
+  height: 10%;
+
+  position: absolute;
+  left: 35%;
+  top: 45%;
+
+  background-color: darkgreen;
+  border-radius: 35% 35% 35% 35%;
+}
+
+#display-segment-dp {
+  width: 10%;
+  height: 10%;
+
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+
+  background-color: darkgreen;
+  border-radius: 100% 100% 100% 100%;
+}
+
+
+
+/*
+Control panel widths: 30vw
+Spacing around the control panels: 4vw
+
+28vw * 3 + 4vw * 5 = 100vw
+
+*/
+
+
+.control-panel-wrapper {
+  height: 30vh;
+  width: 100vw;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  background-color: transparent;
+
+}
+
+.control-panel {
+  height: 90%;
+  width: 90%;
+
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  background-color: transparent;
+}
+
+
+.control-panel-section {
+
+  width: 28%;
+  height: 90%;
+
+  position: absolute;
+  top: 5%;
+
+}
+
+.wasd-controls {
+  left: 4%;
+
+
+}
+
+.extra-controls {
+  left: 36%;
+}
+
+.arrow-controls {
+  left: 68%;
+}
+
+.control-panel-element {
+
+  width: 28%;
+  height: 43%;
+
+  position: absolute;
+
+  background-color: white;
+
+}
+
+.w-control {
+  left: 36%;
+  top: 2%;
+  border-radius: 0.5vw;
+}
+
+.a-control {
+  left: 4%;
+  bottom: 2%;
+  border-radius: 0.5vw;
+}
+
+.s-control {
+  left: 36%;
+  bottom: 2%;
+  border-radius: 0.5vw;
+}
+
+.d-control {
+  left: 68%;
+  bottom: 2%;
+  border-radius: 0.5vw;
+}
+
+.up-control {
+  right: 36%;
+  top: 2%;
+  border-radius: 0.5vw;
+}
+
+.right-control {
+  right: 4%;
+  bottom: 2%;
+  border-radius: 0.5vw;
+}
+
+.down-control {
+  right: 36%;
+  bottom: 2%;
+  border-radius: 0.5vw;
+}
+
+.left-control {
+  right: 68%;
+  bottom: 2%;
+  border-radius: 0.5vw;
+}
+
+.spacebar-control {
+
+  width: 92%;
+  left: 4%;
+  bottom: 2%;
+  border-radius: 0.5vw;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* The switch - the box around the slider */
+
+.control-panel-switch {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -60%);
+  transform: translate(-50%, -60%);
+
+
+
+
+}
+
+.control-panel-switch-name {
+  position: relative;
+
+
+
+}
+
+.control-panel-switch-label {
+  position: relative;
+
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+
+
+}
+
+/* Hide default HTML checkbox */
+.control-panel-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+.control-panel-switches {
+  height: 43%;
+  width: 50%;
+  border-radius: 0.5vw;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 25%;
+
+
+}
+
+#control-panel-slider1 {
+
+}
+
+
+/* The slider */
+.control-panel-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  background-color: red;
+  border-radius: 0.5vw;
+}
+
+.control-panel-slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 0.5vw;
+
+}
+
+input:checked + .control-panel-slider {
+  background-color: green;
+}
+
+input:focus + .control-panel-slider {
+  box-shadow: 0 0 1px green;
+}
+
+input:checked + .control-panel-slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+.rfid-input {
+  out: 1px black solid;
+  background-color: green;
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rfid-input-title {
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  font-size: 1.5vw;
+  transform: translate(-50%, -50%);
+}
+
+.rfid-input-data {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+}
+
+
+.controller-input-data {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2vw;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.program-title {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 2.5vw;
+
+  height: 100%;
+  width: 100%;
+
+  text-align: center;
+}
+
+
+
+
+
+.bump-sensor-input {
+  height: 16.67%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+
+
+}
+
+.bump-sensor-input p {
+  font-size: 1.5vw;
+  position: absolute;
+  top: -65%;
+  left: 20%;
+}
+
+.bump-sensor-block {
+  background-color: green;
+  out: 1px black solid;
+  height: 50%;
+  width: 10%;
+  position: absolute;
+  right: 20%;
+  top: 25%;
+}
+
+
+#bump-sensor-0 {
+  top: 0;
+}
+
+#bump-sensor-1 {
+  top: 16.67%;
+}
+
+#bump-sensor-2 {
+  top: 33.34%;
+}
+
+#bump-sensor-3 {
+  top: 50.01%;
+}
+
+#bump-sensor-4 {
+  top: 66.68%;
+}
+
+#bump-sensor-5 {
+  top: 83.35%;
+}
+
+
+
+.ir-sensor-input-title {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+
+  font-size: 1.5vw;
+  transform: translate(-50%, -50%);
+
+}
+
+
+
+.ir-sensor-input-data-container {
+  width: 100%;
+  height: 70%;
+
+  position: absolute;
+  top: 30%;
+  left: 0;
+
+  out: 2px red dashed;
+
+}
+
+.ir-sensor-input-title-container {
+  width: 100%;
+  height: 30%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+
+  out: 2px green dashed;
+
+
+}
+
+
+
+.ir-sensor-input-data {
+  width: 30%;
+  height: 47%;
+}
+
+#ir-sensor-input-data-left {
+  position: absolute;
+  top: 51%;
+  left: 3%;
+  out: 2px black dashed;
+}
+
+#ir-sensor-input-data-center {
+  position: absolute;
+  top: 2%;
+  left: 35%;
+  out: 2px black dashed;
+}
+
+#ir-sensor-input-data-right {
+  position: absolute;
+  top: 51%;
+  right: 3%;
+  out: 2px black dashed;
+}
+
+.ir-sensor-input-data-value {
+  position: absolute;
+
+
+  width: 100%;
+  height: 100%;
+  text-align: center;
+
+  font-size: 1.1vw;
+
+}
+
+
+
+
+
+
+.power-output-data-container {
+  width: 100%;
+  height:70%;
+
+  position: absolute;
+  top: 30%;
+  left: 0;
+
+  out: 2px green dashed;
+}
+
+.power-output-title-container {
+  width: 100%;
+  height: 30%;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  out: 2px black dashed;
+}
+
+.power-output-data {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+
+  font-size: 1.5vw;
+  transform: translate(-50%, -50%);
+}
+
+.power-output-title {
+  text-align: center;
+  font-size: 1.5vw;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.speed-output {
+  text-align: center;
+
+
+  width: 100%;
+  height: 100%;
+  font-size: 2vw;
+
+}
+
+
+
+
+
+
+.wheel-output-data-section {
+  width: 100%;
+  height: 50%;
+  position: absolute;
+
+
+}
+
+#wheel-output-data-section-1 {
+  top: 0;
+  left: 0;
+
+
+}
+
+#wheel-output-data-section-2 {
+  top: 50%;
+  left: 0;
+
+
+
+}
+
+.wheel-title-container{
+
+  width: 100%;
+  height: 30%;
+  out: 2px purple dashed;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+
+}
+
+.wheel-title {
+
+
+
+
+
+  text-align: center;
+  out: 2px black dashed;
+
+}

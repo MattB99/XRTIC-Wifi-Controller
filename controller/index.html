@@ -1,0 +1,242 @@
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.2/mqttws31.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="index.css">
+
+
+
+</head>
+
+
+<body>
+
+  <div class="monitor-panel-wrapper">
+
+    <div class="monitor-panel">
+
+      <div class="monitor-panel-section input-panel">
+
+        <div class="input-panel-section controller-input-section">
+
+          <p class="controller-input-data" id="controller-input-data-label">N/A</p>
+
+        </div>
+
+        <div class="input-panel-section bump-sensor-input-section">
+          <div class="bump-sensor-input" id="bump-sensor-0">
+            <p>Bump 0:</p>
+            <div class="bump-sensor-block" id="bump-sensor-block-0">
+            </div>
+
+          </div>
+
+          <div class="bump-sensor-input" id="bump-sensor-1">
+            <p>Bump 1:</p>
+            <div class="bump-sensor-block" id="bump-sensor-block-1">
+            </div>
+          </div>
+
+          <div class="bump-sensor-input" id="bump-sensor-2">
+            <p>Bump 2:</p>
+            <div class="bump-sensor-block" id="bump-sensor-block-2">
+            </div>
+          </div>
+
+          <div class="bump-sensor-input" id="bump-sensor-3">
+            <p>Bump 3:</p>
+            <div class="bump-sensor-block" id="bump-sensor-block-3">
+            </div>
+          </div>
+
+          <div class="bump-sensor-input" id="bump-sensor-4">
+            <p>Bump 4:</p>
+            <div class="bump-sensor-block" id="bump-sensor-block-4">
+            </div>
+          </div>
+          <div class="bump-sensor-input" id="bump-sensor-5">
+            <p>Bump 5:</p>
+            <div class="bump-sensor-block" id="bump-sensor-block-5">
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="input-panel-section rfid-input-section">
+          <p class="rfid-input-title"><u><b>RFID</b></u></p>
+          <div class="rfid-input" id="rfid-input-block">
+          </div>
+          <p class="rfid-input-data" id="rfid-data">No tag detected</p>
+
+        </div>
+
+        <div class="input-panel-section ir-sensor-input-section">
+          <div class="ir-sensor-input-title-container">
+            <p class="ir-sensor-input-title"><b><u>IR Sensor</u></b></p>
+          </div>
+
+          <div class="ir-sensor-input-data-container">
+            <div class="ir-sensor-input-data" id="ir-sensor-input-data-left">
+              <p class="ir-sensor-input-data-value" id="ir-sensor-input-data-left-value">NO DATA</p>
+            </div>
+
+            <div class="ir-sensor-input-data" id="ir-sensor-input-data-center">
+              <p class="ir-sensor-input-data-value" id="ir-sensor-input-data-center-value">NO DATA</p>
+            </div>
+
+            <div class="ir-sensor-input-data" id="ir-sensor-input-data-right">
+              <p class="ir-sensor-input-data-value" id="ir-sensor-input-data-right-value">NO DATA</p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="monitor-panel-section output-panel">
+
+        <div class="output-panel-section title-output-section">
+          <p class="program-title"><b><u>XRTIC-20 RFID Robot Super Controller</u></b></p>
+        </div>
+
+
+        <div class="output-panel-section speed-output-section">
+
+          <p class="speed-output" id="speed-output-value">N/A cm/s</p>
+
+        </div>
+
+
+        <div class="output-panel-section wheel-output-section">
+          <div class="wheel-output-data-section" id="wheel-output-data-section-1">
+            <div class="wheel-title-container">
+              <p class="wheel-title" id="wheel-title-1"><b><u>Wheel 1</u></b></p>
+
+              <p id="wheel-value-1">NO DATA</p>
+
+              <p id="wheel-dir-1">NO DATA</p>
+            </div>
+
+          </div>
+
+          <div class="wheel-output-data-section" id="wheel-output-data-section-2">
+            <div class="wheel-title-container">
+              <p class="wheel-title" id="wheel-title-2"><b><u>Wheel 2</u></b></p>
+              <p id="wheel-value-2">NO DATA</p>
+
+              <p id="wheel-dir-2">NO DATA</p>
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="output-panel-section display-output-section">
+          <div class="display-output-section-element">
+            <div class="display-segment" id="display-segment-a">
+            </div>
+
+            <div class="display-segment" id="display-segment-b">
+            </div>
+
+            <div class="display-segment" id="display-segment-c">
+            </div>
+
+            <div class="display-segment" id="display-segment-d">
+            </div>
+
+            <div class="display-segment" id="display-segment-e">
+            </div>
+
+            <div class="display-segment" id="display-segment-f">
+            </div>
+
+            <div class="display-segment" id="display-segment-g">
+            </div>
+
+            <div class="display-segment" id="display-segment-dp">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="output-panel-section power-output-section">
+          <div class="power-output-title-container">
+            <p class="power-output-title"><b><u>Power</u></b></p>
+          </div>
+          <div class="power-output-data-container">
+            <p class="power-output-data" id="power-output-data-value">NO DATA</p>
+          </div>
+        </div>
+
+        <div class="output-panel-section action-output-section" id="action-output-section-raw">
+          <div class="websocket-messages" id="action-messages"></div>
+        </div>
+
+      </div>
+
+      <div class="monitor-panel-section raw-panel" id="monitor-panel-section-raw">
+        <div class="websocket-messages" id="messages"></div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="control-panel-wrapper">
+    <div class="control-panel">
+
+      <div class="control-panel-section wasd-controls">
+
+        <button class="control-panel-element w-control" id="w-button" onmousedown="pressW()" onmouseup="releaseW()">W</button>
+        <button class="control-panel-element a-control" id="a-button" onmousedown="pressA()" onmouseup="releaseA()">A</button>
+        <button class="control-panel-element s-control" id="s-button" onmousedown="pressS()" onmouseup="releaseS()">S</button>
+        <button class="control-panel-element d-control" id="d-button" onmousedown="pressD()" onmouseup="releaseD()">D</button>
+
+      </div>
+
+      <div class="control-panel-section extra-controls">
+
+        <div class="control-panel-switches">
+          <div class="control-panel-switch" id="control-panel-switch1">
+            <p class="control-panel-switch-name"></p>
+            <label class="control-panel-switch-label">
+              <input type="checkbox" id="control-panel-checkbox1" onclick="toggleRoboNav();">
+              <span class="control-panel-slider" id="control-panel-slider1"></span>
+            </label>
+          </div>
+        </div>
+
+        <button class="control-panel-element spacebar-control" id="spacebar-button" onmousedown="pressSpacebar()" onmouseup="releaseSpacebar()">Space</button>
+
+
+      </div>
+
+      <div class="control-panel-section arrow-controls">
+
+        <button class="control-panel-element up-control" id="up-button" onmousedown="pressUp()" onmouseup="releaseUp()">Up</button>
+        <button class="control-panel-element left-control" id="left-button" onmousedown="pressLeft()" onmouseup="releaseLeft()">Left</button>
+        <button class="control-panel-element down-control" id="down-button" onmousedown="pressDown()" onmouseup="releaseDown()">Down</button>
+        <button class="control-panel-element right-control" id="right-button" onmousedown="pressRight()" onmouseup="releaseRight()">Right</button>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <script src="main.js" type="text/javascript"></script>
+
+
+</body>
